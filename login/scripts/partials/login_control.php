@@ -7,7 +7,7 @@ class Login_control
     {
         ?>
         <div class="dropdown">
-            <a href="javascript:void(0)" onclick="myFunction()" class="dropbtn">
+            <a href="javascript:void(0)" onclick="dashboard()" class="dropbtn">
             panel login <!-- <img src="../login/scripts/partials/image/avatar.jpg" alt="avatar"> -->
             </a>
             <div id="myDropdown" class="dropdown-content">
@@ -20,7 +20,7 @@ class Login_control
         <script>
             /* When the user clicks on the button, 
             toggle between hiding and showing the dropdown content */
-            function myFunction() {
+            function dashboard() {
                 document.getElementById("myDropdown").classList.toggle("show");
             }
 

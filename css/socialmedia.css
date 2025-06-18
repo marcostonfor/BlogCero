@@ -1,0 +1,9 @@
+#social-media ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#social-media ul li {
+    display: inline-block;
+    margin: auto 0.5rem;
+}
