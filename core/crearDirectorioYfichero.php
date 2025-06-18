@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (mkdir($rutaDestino, 0775, true)) {
                 echo "✅ Carpeta creada: $nombre";
+                header("Location: ../mdParser/usePreviewer.php");
             } else {
                 echo "❌ Error al crear la carpeta. Verifica permisos y ruta.";
             }

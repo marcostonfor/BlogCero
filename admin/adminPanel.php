@@ -53,6 +53,7 @@ if ($request) {
                         <a href="socialMedia/brand_icons.php" target="_blank">publicar icono social-media</a>
                         <a href="subirArchivos/subirArchivo.php" target="_blank" title="Subir archivos markdown">Subir
                             archivos</a>
+                            <a href="../core/crearDirectorioYfichero.php" target="_blank">Gestion de paginas subidas</a>
                     </div>
                 </div>
                 <hr>
