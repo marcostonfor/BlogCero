@@ -1,0 +1,45 @@
+@import url('https://fonts.cdnfonts.com/css/inconsolata-2');
+* {
+    box-sizing: border-box;
+    font-family: 'Inconsolata', sans-serif;
+}
+
+#system__login {
+    width: 100%;
+    margin: 2rem auto;
+    border: 0;
+    border-radius: 0.8rem;
+    background-color: aquamarine;
+
+}
+
+#system__login h6 {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.caja_inicio_de_sesion {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    border: 0;
+    padding: 0.6rem;
+    margin-top: -2rem;
+}
+
+#dividers {
+    margin: auto 2rem;
+}
+
+.divider-Y {
+    width: 0;
+    height: 0.7rem;
+    background-color: black;
+}
+
+.caja_inicio_de_sesion a {
+    font-size: 07pt;
+    text-decoration: none;
+}

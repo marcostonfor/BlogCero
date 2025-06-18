@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.previewermd {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 3vh 5vw;
+}
+
+.markdown-body code {
+    color: khaki;
+    background-color: #333;
+    padding: 0.2em 0.4em;
+}
+
+.markdown-body h1 {
+    color: dodgerblue;
+    text-shadow: 0.1vh 0.1vw 12px fuchsia, 0.2vh 0.2vw 17px bisque, 0.1vh 0.1vw 1px black;
+}
+
+
+
+#content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}

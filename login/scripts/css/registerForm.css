@@ -1,0 +1,91 @@
+@import url('https://fonts.cdnfonts.com/css/inconsolata-2');
+* {
+    box-sizing: border-box;
+    font-family: 'Inconsolata', sans-serif;
+}
+
+#register {
+    width: fit-content;
+    margin: 5rem auto;
+    background-color: aqua;
+    padding: 0.5rem;
+}
+
+.campos {
+    border: 0;
+    display: block;
+}
+
+.campos input {
+    padding: 0.5rem;
+}
+
+.campos label {
+    margin: auto 0.5rem;
+}
+
+#fullName, #passwords {
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+#fullName {
+    border-bottom: 0.2rem solid black;
+}
+
+.fullName input, .passwords input {
+    display: block;
+    margin: 0.5rem auto;
+}
+
+.buttons {
+    text-align: center;
+    border: 0;
+}
+
+.buttons a {
+    padding: 0.5rem;
+    background-color: #5f9ea0;
+    color: #f0f8ff;
+    text-decoration: none;
+    text-align: center;
+    border: 0;
+}
+
+.btnsave {
+    background-color: #0000cd;
+}
+
+.btnclean {
+    background-color: #8b0000;
+}
+
+button {
+    margin: auto 0.5rem;
+    width: 7vw;
+    padding: 0.5rem;
+    border: 0;
+    color: #f0f8ff;
+}
+
+#register section {
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.caja__email_password {
+    background-color: azure;
+    padding: 0.3rem;
+}
+
+::placeholder {
+    font-weight: bold;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}

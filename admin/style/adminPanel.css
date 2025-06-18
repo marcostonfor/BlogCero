@@ -1,0 +1,176 @@
+body {
+    width: 100%;
+    height: 200vh;
+    box-sizing: border-box;
+    background-color: #444;
+}
+
+#master_body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: stretch;
+    border: 0.5vw double black;
+    background-color: #444;
+}
+
+#navigation_admin {
+    width: 15vw;
+    border-left: 0.5vw double black;
+}
+
+#navigation_admin nav {
+    width: 24vw;
+}
+
+#page_body {
+    border-left: 1vw double black;
+}
+
+#page_body_display {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    gap: 10rem;
+}
+
+#mdEditor {
+    width: auto;
+    margin: 5vh auto;
+    padding: 2vh 1vw;
+    border: 0.2vw double darkslategray;
+    border-radius: 1vw;
+    background-color: burlywood;
+    transform: scale(0.8, 0.8);
+    transform-origin: center top;
+}
+
+#mdEditor::after {
+    content: "¡Editor markdown rápido!";
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: 1em;
+    color: darkslategray;
+    font-weight: bold;
+}
+
+#mdEditor h3 {
+    width: 20vw;
+    text-align: center;
+}
+
+#mdEditor #mdEditor-interface {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+#mdEditor #preview {
+    width: 23vw;
+    height: 30vh;
+    border: 0.1vw ridge beige;
+    border-left: 0.4vw solid #444;
+    overflow-y: scroll;
+}
+
+#mdEditor fieldset {
+    position: relative;
+    padding: 1.1vh 0.3vw;
+    border: none;
+    background-color: dodgerblue;
+    /* background-image: url('./images/mdAmbaricono.png');
+    background-repeat: no-repeat; */
+    background-position: center center;
+    background-size: cover;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    /* filter: invert(100%); */
+}
+
+#mdEditor fieldset legend {
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    color: black;
+    background-color: hsla(0, 0%, 100%, 0.486);
+    /* mix-blend-mode: screen; */
+}
+
+#mdEditor .guardarbtn {
+    cursor: pointer;
+    margin-bottom: 0.8vw;
+}
+
+#mdEditor .limpiarbtn {
+    cursor: pointer;
+    display: block;
+    margin: 0.6vw auto;
+}
+
+#mdEditor #preview_box {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#mdEditor #preview_box #file_explorer {
+    width: 35vw;
+    height: auto;
+    overflow: scroll;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 55%;
+    margin: 0.3rem auto;
+    margin-left: 1rem;
+    text-align: center;
+    border: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #ccc;
+    outline: 0.2rem solid dodgerblue;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    width: 55%;
+    padding: 0 18px;
+    background-color: white;
+    text-align: center;
+    display: none;
+    overflow: hidden;
+}
+
+#calendar {
+    width: 30%;
+    height: fit-content;
+    padding: 0 1rem;
+}
+
+.linkPreview {
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+}
+
+.linkPreview a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: green;
+    background-color: yellow;
+    border-radius: 0.3rem;
+}
