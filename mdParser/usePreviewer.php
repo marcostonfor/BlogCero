@@ -1,4 +1,25 @@
 <?php
+/**
+ * Script para visualizar archivos Markdown utilizando la clase Previewer.
+ *
+ * Este archivo se encarga de:
+ * - Incluir las clases necesarias (Parsedown, Previewer).
+ * - Instanciar Parsedown y Previewer.
+ * - Determinar qué archivo Markdown mostrar, ya sea a través de un parámetro GET 'md'
+ *   o utilizando 'README.md' como valor predeterminado.
+ * - Renderizar el archivo Markdown a HTML utilizando la clase Previewer.
+ * - Mostrar el HTML resultante dentro de una estructura de página web,
+ *   incluyendo navegación del sitio, un menú lateral y estilos para el contenido Markdown
+ *   y resaltado de sintaxis con Prism.js.
+ * - Manejar excepciones que puedan ocurrir durante el proceso de renderizado.
+ *
+ * @package     BlogCero
+ * @subpackage  MarkdownParser
+ * @since       1.0.0
+ *
+ * @uses Parsedown Para la conversión básica de Markdown a HTML.
+ * @uses Previewer Para la lógica de carga y renderizado de archivos Markdown, incluyendo la reescritura de enlaces.
+ */
 require_once __DIR__ . '/Parsedown.php';
 require_once __DIR__ . '/previewer.php';
 
@@ -32,13 +53,27 @@ $previewer->setArchivo('README.md');
 
 <body>
     <?php
+    /**
+     * Inclusión de la barra de navegación principal del sitio.
+     */
     require_once __DIR__ . '/../partials/navigationSite.php';
     ?>
     <div id="content">
         <?php
+        /**
+         * Inclusión del menú lateral específico para la sección de previsualización.
+         * Probablemente contiene enlaces a diferentes archivos Markdown.
+         */
         require_once __DIR__ . '/../core/menuLink.php'; ?>
         <section class="previewermd markdown-body">
             <?php
+             /**
+             * Lógica para determinar el archivo Markdown a renderizar.
+             * Intenta obtener el nombre del archivo del parámetro GET 'md'.
+             * Si no se proporciona, utiliza 'README.md' como valor predeterminado.
+             * Llama al método rendermd() de la instancia de Previewer y muestra el resultado.
+             * Captura y muestra cualquier excepción que ocurra durante el proceso.
+             */
             // Renderizar el Markdown del archivo mdExample.md
             try {
                 $archivo = $_GET['md'] ?? 'README.md';

@@ -1,5 +1,16 @@
 <?php
-
+/**
+ * Barra de navegación principal del sitio.
+ *
+ * Este archivo se encarga de construir y mostrar la barra de navegación
+ * completa del sitio. Incluye el menú de navegación principal,
+ * los iconos de redes sociales y el panel de inicio de sesión o
+ * información del usuario.
+ *
+ * @package     BlogCero
+ * @subpackage  Partials
+ * @since       1.0.0
+ */
 
 ?>
 <link rel="stylesheet" href="../css/menuStyles.css">

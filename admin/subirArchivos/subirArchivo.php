@@ -88,117 +88,134 @@ function mostrarEstructuraDirectorio($directorioRaiz, $subRutaActual = '')
             </div>
         </div>
         <div class="row mt-5">
-            <!-- <form action="../../MDExplorer/explorer.php" method="post">
-                <div class="form-group">
-                    <label for="nombre_archivo_mover">Nombre del archivo (en Subidasmd/):</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre_archivo_mover"
-                        placeholder="ejemplo.md" required>
-                </div>
-                <div class="form-group">
-                    <label for="ruta_destino">Ruta de destino (dentro de MD/, ej: subcarpeta1/sub2):</label>
-                    <input type="text" class="form-control" name="path" id="ruta_destino"
-                        placeholder="opcional, ej: docs/privado">
-                </div>
-                <input type="hidden" name="tipo" value="archivo">
-                <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-share-square"></i> Mover
-                    Archivo</button>
-            </form> -->
-            <div class="col-md-6"> <!-- Columna para el formulario de mover archivos -->
+            <div class="col-md-6 moveFile"> <!-- Columna para el formulario de mover archivos -->
                 <h5><i class="fa fa-share-square"></i> Mover archivo de Subidasmd/ a MD/</h5>
                 <hr />
-                <form action="../../MDExplorer/explorer.php" method="post">
-                    <div class="form-group">
-                        <label for="nombre_archivo_mover">Nombre del archivo (en Subidasmd/):</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre_archivo_mover"
-                            placeholder="ejemplo.md" required>
+                <div id="moveFileIU">
+                    <form action="../../MDExplorer/explorer.php" method="post" class="">
+                        <div class="form-group">
+                            <label for="nombre_archivo_mover">Nombre del archivo (en Subidasmd/):</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre_archivo_mover"
+                                placeholder="ejemplo.md" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ruta_destino">Ruta de destino (dentro de MD/, ej: subcarpeta1/sub2):</label>
+                            <input type="text" class="form-control" name="path" id="ruta_destino"
+                                placeholder="opcional, ej: docs/privado">
+                        </div>
+                        <input type="hidden" name="tipo" value="archivo">
+                        <button type="submit" class="btn mt-2"><i class="fa fa-share-square"></i> Mover
+                            Archivo</button>
+                    </form>
+                    <hr />
+                    <div class="col-md-6"> <!-- Columna para la estructura de directorios -->
+                        <h5><i class="fa fa-sitemap"></i> Estructura de MD/ (para referencia)</h5>
+                        <hr />
+                        <div class="directorio-estructura">
+                            <?php
+                            // $directorioDestinoBase se define en explorer.php y está disponible aquí
+                            if (isset($directorioDestinoBase) && is_dir($directorioDestinoBase)) {
+                                echo mostrarEstructuraDirectorio($directorioDestinoBase);
+                            } else {
+                                echo "<p>No se pudo acceder al directorio base MD/ para mostrar la estructura.</p>";
+                            }
+                            ?>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="ruta_destino">Ruta de destino (dentro de MD/, ej: subcarpeta1/sub2):</label>
-                        <input type="text" class="form-control" name="path" id="ruta_destino"
-                            placeholder="opcional, ej: docs/privado">
-                    </div>
-                    <input type="hidden" name="tipo" value="archivo">
-                    <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-share-square"></i> Mover
-                        Archivo</button>
-                </form>
-            </div>
-            <div class="col-md-6"> <!-- Columna para la estructura de directorios -->
-                <h5><i class="fa fa-sitemap"></i> Estructura de MD/ (para referencia)</h5>
-                <hr />
-                <div class="directorio-estructura">
-                    <?php
-                    // $directorioDestinoBase se define en explorer.php y está disponible aquí
-                    if (isset($directorioDestinoBase) && is_dir($directorioDestinoBase)) {
-                        echo mostrarEstructuraDirectorio($directorioDestinoBase);
-                    } else {
-                        echo "<p>No se pudo acceder al directorio base MD/ para mostrar la estructura.</p>";
-                    }
-                    ?>
                 </div>
             </div>
-        </div>
 
-        <style type="text/css">
-            .subir {
-                border: 1px solid #7F9EEE;
-                padding: 20px;
-                width: auto;
-                border-radius: 15px;
-                min-height: 240px;
-                margin: auto;
-                background: #C0E1F9;
-                margin-bottom: 5px;
-            }
+            <style type="text/css">
+                body {
+                    background-color: #f5e7d6;
+                }
 
-            .archivos {
-                border: 1px solid #89EA53;
-                padding: 10px;
-                width: auto;
-                min-height: 240px;
-                border-radius: 15px;
-                margin: auto;
-                background: #CCF8B4;
-            }
+                .btn {
+                    background-color: #dc143c;
+                }
 
-            #url {
-                width: 30vw;
-            }
+                .subir {
+                    border: 0.0625rem solid #8f6d74;
+                    padding: 1.25rem;
+                    width: auto;
+                    border-radius: 1rem;
+                    min-height: 15rem;
+                    margin: auto;
+                    background-color: #eb2d53;
+                    color: #99ccff;
+                    margin-bottom: 5px;
+                }
 
-            .directorio-estructura {
-                max-height: 300px;
-                /* Ajusta según necesidad */
-                overflow-y: auto;
-                border: 1px solid #ddd;
-                padding: 10px;
-                border-radius: 5px;
-                background-color: #f9f9f9;
-            }
+                .archivos {
+                    border: 0.0625rem solid #89EA53;
+                    padding: 0.7rem;
+                    width: auto;
+                    min-height: 15rem;
+                    border-radius: 1rem;
+                    margin: auto;
+                    background-color: #00664d;
+                    color: antiquewhite;
+                }
 
-            .directorio-estructura ul {
-                list-style-type: none;
-                padding-left: 1em;
-                /* Indentación para subniveles */
-            }
+                .moveFile {
+                    border: 0.0625rem solid #4682b4;
+                    padding: 1rem;
+                    width: auto;
+                    min-height: 15rem;
+                    border-radius: 1rem;
+                    margin: auto;
+                    margin-bottom: 6rem;
+                    background-color: #000066;
+                    color: azure;
+                    text-align: center;
+                }
 
-            .directorio-estructura>ul {
-                /* Sin padding-left para el primer nivel */
-                padding-left: 0;
-            }
+                #moveFileIU {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: baseline;
+                }
 
-            .directorio-estructura li {
-                padding: 2px 0;
-            }
-        </style>
+                #nombre_archivo_mover,
+                #ruta_destino {
+                    width: 20vw;
+                }
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-            crossorigin="anonymous"></script>
+                .directorio-estructura {
+                    max-height: 300px;
+                    overflow-y: auto;
+                    border: 0.0625rem solid #ddd;
+                    padding: 0.7rem;
+                    border-radius: 1rem;
+                    background-color: rgb(187, 187, 219);
+                    margin-top: 2rem;
+                }
+
+                .directorio-estructura ul {
+                    list-style-type: none;
+                    padding-left: 1em;
+                    /* Indentación para subniveles */
+                }
+
+                .directorio-estructura>ul {
+                    /* Sin padding-left para el primer nivel */
+                    padding-left: 0;
+                }
+
+                .directorio-estructura li {
+                    padding: 2px 0;
+                }
+            </style>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+                crossorigin="anonymous"></script>
 
 </body>
 

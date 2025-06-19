@@ -1,4 +1,14 @@
 <?php
+/**
+ * Página principal de lenguajes.
+ *
+ * Este archivo muestra la página de inicio para la sección de lenguajes del sitio.
+ * Incluye la cabecera, estilos CSS, navegación y el contenido principal de la página.
+ *
+ * @package     BlogCero
+ * @subpackage  Public
+ * @since       1.0.0
+ */
 session_start();
 require_once __DIR__ . '/../components/header.php';
 require_once __DIR__ . '/../components/css/headerStyles.php';
