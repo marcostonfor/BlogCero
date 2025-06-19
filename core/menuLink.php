@@ -7,9 +7,9 @@ function generarMenuRecursivo($directorio, $rutaRelativa = '')
     $items = scandir($directorio);
 
     foreach ($items as $item) {
-        if ($item === '.' || $item === '..')
+        if ($item === '.' || $item === '..' || ($item === 'Subidasmd' && $directorio === $GLOBALS['baseDir'])) {
             continue;
-
+        }
         $rutaAbsoluta = $directorio . '/' . $item;
         $rutaRelativaCompleta = ltrim($rutaRelativa . '/' . $item, '/');
 
