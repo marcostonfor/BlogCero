@@ -69,9 +69,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 echo '<br>Ruta base: ' . $raiz; */
 
 ?>
+<style>
+    body {
+        background-color: #f5e7d6;
+    }
 
+    #formFornew {
+        width: 12rem;
+        min-height: 15rem;
+        border: 0.0625rem solid #b4a046;
+        padding: 1rem;
+        border-radius: 1rem;
+        margin: auto auto;
+        margin-top: 10rem;
+        background-color: #636262;
+        box-shadow: 0 0 2px 3px #737274;
+        color: #bbbbdb;
+    }
+</style>
 <!-- Formulario HTML -->
-<form method="post">
+<form method="post" id="formFornew">
     <label>Ruta relativa (dentro de MD/):<br>
         <input type="text" name="path" placeholder="ejemplo/subcarpeta" required>
     </label><br><br>
